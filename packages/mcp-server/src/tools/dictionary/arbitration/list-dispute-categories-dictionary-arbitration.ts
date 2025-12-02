@@ -43,7 +43,7 @@ export const handler = async (client: Datanewton, args: Record<string, unknown> 
       await maybeFilter(jq_filter, await client.dictionary.arbitration.listDisputeCategories()),
     );
   } catch (error) {
-    if (isJqError(error)) {
+    if (error instanceof Datanewton.APIError || isJqError(error)) {
       return asErrorResult(error.message);
     }
     throw error;
