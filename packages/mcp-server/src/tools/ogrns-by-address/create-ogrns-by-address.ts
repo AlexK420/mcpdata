@@ -55,7 +55,7 @@ export const handler = async (client: Datanewton, args: Record<string, unknown> 
   try {
     return asTextContentResult(await maybeFilter(jq_filter, await client.ogrnsByAddress.create(body)));
   } catch (error) {
-    if (isJqError(error)) {
+    if (error instanceof Datanewton.APIError || isJqError(error)) {
       return asErrorResult(error.message);
     }
     throw error;

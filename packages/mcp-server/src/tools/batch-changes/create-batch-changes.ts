@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { Metadata, asTextContentResult } from 'datanewton-mcp/tools/types';
+import { Metadata, asErrorResult, asTextContentResult } from 'datanewton-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import Datanewton from 'datanewton';
@@ -103,7 +103,14 @@ export const tool: Tool = {
 
 export const handler = async (client: Datanewton, args: Record<string, unknown> | undefined) => {
   const body = args as any;
-  return asTextContentResult(await client.batchChanges.create(body));
+  try {
+    return asTextContentResult(await client.batchChanges.create(body));
+  } catch (error) {
+    if (error instanceof Datanewton.APIError) {
+      return asErrorResult(error.message);
+    }
+    throw error;
+  }
 };
 
 export default { metadata, tool, handler };
