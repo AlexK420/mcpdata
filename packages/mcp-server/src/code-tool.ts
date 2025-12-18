@@ -35,7 +35,10 @@ export async function codeTool() {
       headers: {
         ...(stainlessAPIKey && { Authorization: stainlessAPIKey }),
         'Content-Type': 'application/json',
-        client_envs: JSON.stringify({ DATANEWTON_API_KEY: readEnv('DATANEWTON_API_KEY') }),
+        client_envs: JSON.stringify({
+          DATANEWTON_API_KEY: readEnv('DATANEWTON_API_KEY'),
+          DATANEWTON_BASE_URL: readEnv('DATANEWTON_BASE_URL'),
+        }),
       },
       body: JSON.stringify({
         project_name: 'datanewton',
