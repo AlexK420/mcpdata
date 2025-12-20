@@ -42,15 +42,15 @@ If you’d like to use the repository from source, you can either install from g
 To install via git:
 
 ```sh
-$ npm install git+ssh://git@github.com:stainless-sdks/datanewton-typescript.git
+$ npm install git+ssh://git@github.com:AlexK420/mcpdata.git
 ```
 
 Alternatively, to link a local copy of the repo:
 
 ```sh
 # Clone
-$ git clone https://www.github.com/stainless-sdks/datanewton-typescript
-$ cd datanewton-typescript
+$ git clone https://www.github.com/AlexK420/mcpdata
+$ cd mcpdata
 
 # With yarn
 $ yarn link

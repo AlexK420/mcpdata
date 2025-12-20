@@ -8,9 +8,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stainless-sdks/datanewton-typescript.git"
+    "url": "git+https://github.com/AlexK420/mcpdata.git"
   },
-  "homepage": "https://github.com/stainless-sdks/datanewton-typescript/tree/main/packages/mcp-server#readme",
+  "homepage": "https://github.com/AlexK420/mcpdata/tree/main/packages/mcp-server#readme",
   "server": {
     "type": "node",
     "entry_point": "index.js",
